@@ -870,6 +870,16 @@ button, input {
   font-size: 2.25rem;
 }
 
+.project-entity {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .project-body {
   padding: 1.75rem;
   display: flex;
@@ -1011,6 +1021,23 @@ button, input {
   font-weight: 600;
   color: var(--text-primary);
   word-break: break-all;
+}
+
+.contact-buttons-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: rgba(var(--color-accent-rgb), 0.12);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
 }
 
 .contact-direct-action {
