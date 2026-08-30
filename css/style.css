@@ -1142,13 +1142,37 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   13. RESPONSIVE / MEDIA QUERIES (MOBILE-FIRST ADAPTATIONS)
+   13. RESPONSIVE / MEDIA QUERIES (SISTEMA FLUIDO & ADAPTATIVO)
    -------------------------------------------------------------------------- */
-@media (max-width: 992px) {
+
+/* Prevención global de scroll horizontal */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Pantallas Grandes / Desktop (>= 1024px): 3 Columnas */
+@media (min-width: 1024px) {
+  .skills-grid,
+  .skills-grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+/* Pantallas Medianas / Tablets (640px a 1023px): 2 Columnas */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .skills-grid,
+  .skills-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 
   .hero-description {
@@ -1156,10 +1180,7 @@ button, input {
     margin-right: auto;
   }
 
-  .hero-cta-group {
-    justify-content: center;
-  }
-
+  .hero-cta-group,
   .hero-social-links {
     justify-content: center;
   }
@@ -1167,12 +1188,77 @@ button, input {
   .about-grid {
     grid-template-columns: 1fr;
   }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* Pantallas Móviles (< 640px): 1 Columna y ajustes de lectura */
+@media (max-width: 639px) {
+  .skills-grid,
+  .skills-grid-6 {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.25rem;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group,
+  .hero-social-links {
+    justify-content: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajuste responsivo del componente de código estilo terminal */
+  .code-window {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .code-content {
+    font-size: 0.78rem;
+    padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .about-text-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .contact-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* Pantallas Tablet / Móvil generales (<= 768px): Navegación y estructura */
 @media (max-width: 768px) {
   .section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
   }
 
   .section-title {
@@ -1180,7 +1266,7 @@ button, input {
   }
 
   .hero-title {
-    font-size: 2.35rem;
+    font-size: 2.25rem;
   }
 
   .mobile-toggle-btn {
@@ -1233,31 +1319,67 @@ button, input {
   }
 }
 
+/* Pantallas Compactas / Smartphones (< 480px): Tipografía y CTAs a ancho completo */
 @media (max-width: 480px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .hero-title {
-    font-size: 1.95rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
   }
 
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .hero-cta-group .btn {
     width: 100%;
+    padding: 0.85rem 1rem;
   }
 
   .contact-method {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
   }
 
+  .contact-buttons-inline {
+    width: 100%;
+  }
+
+  .contact-buttons-inline .btn,
   .contact-method .btn {
     width: 100%;
   }
+
+  .footer-quote {
+    padding: 0.65rem 1rem;
+  }
+
+  .quote-text {
+    font-size: 0.875rem;
+  }
 }
 
-/* Reducción de movimiento */
+/* Reducción de movimiento por accesibilidad */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
