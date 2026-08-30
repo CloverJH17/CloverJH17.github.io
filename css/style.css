@@ -458,6 +458,62 @@ button, input {
   align-items: center;
 }
 
+.hero-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.avatar-container {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.avatar-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 28px rgba(var(--color-primary-rgb), 0.55);
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--bg-primary);
+  display: block;
+}
+
+.avatar-glow {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.4) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse-avatar 3s infinite alternate;
+}
+
+@keyframes pulse-avatar {
+  0% { opacity: 0.4; transform: scale(0.98); }
+  100% { opacity: 0.9; transform: scale(1.08); }
+}
+
 .badge-status {
   display: inline-flex;
   align-items: center;
@@ -469,7 +525,6 @@ button, input {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-accent);
-  margin-bottom: 1.5rem;
 }
 
 .status-dot {
@@ -1180,6 +1235,7 @@ html, body {
     margin-right: auto;
   }
 
+  .hero-profile-header,
   .hero-cta-group,
   .hero-social-links {
     justify-content: center;
@@ -1217,6 +1273,7 @@ html, body {
     margin-right: auto;
   }
 
+  .hero-profile-header,
   .hero-cta-group,
   .hero-social-links {
     justify-content: center;

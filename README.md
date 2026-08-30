@@ -11,9 +11,9 @@
   <br />
 
   **Sitio web personal y portafolio interactivo de Jair Hernández.**  
-  *Coordinador de Operaciones | Estudiante de Desarrollo Empresarial (UNEFM) | Formador en robótica y electricidad.*
+  *Soporte Técnico TI | Gestión Operativa & Procesos | Estudiante de 7° semestre de Desarrollo Empresarial (UNEFM) / Técnico en Electricidad.*
 
-  [🌐 Ver Sitio Web en Vivo](https://cloverjh17.github.io/) • [📫 Contactar por Correo](mailto:The.hernandezjair@gmail.com) • [✈️ Telegram Oficial](https://t.me/CloverJH17)
+  [🌐 Ver Sitio Web en Vivo](https://cloverjh17.github.io/) • [📫 Contactar por Correo](mailto:the.hernandezjair@gmail.com) • [✈️ Telegram Oficial](https://t.me/CloverJH17)
 
 </div>
 
@@ -23,7 +23,7 @@
 
 Este repositorio contiene el código fuente de mi sitio web personal y portafolio profesional, diseñado y desarrollado desde cero para ser desplegado de forma estática, rápida y segura en **GitHub Pages**.
 
-El proyecto refleja un perfil híbrido enfocado en **coordinación de operaciones logísticas**, **proyectos de desarrollo empresarial**, **mentoría formativa STEM (robótica y electricidad)** y **soporte técnico en entornos Linux y gestión de datos**.
+El proyecto refleja un perfil híbrido enfocado en **soporte técnico TI y sistemas**, **gestión y optimización de flujos operativos**, **herramientas de IA para productividad** y **formación tecnológica en robótica y electricidad**.
 
 ---
 
