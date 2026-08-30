@@ -1,35 +1,575 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jair Hernández | Perfil</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      max-width: 650px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #333;
-      background-color: #fafafa;
-    }
-    h1 { color: #111; margin-bottom: 0.2rem; }
-    p.subtitle { color: #666; margin-top: 0; }
-    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    a { color: #0969da; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Primario -->
+  <title>Jair Hernández | Desarrollador de Software & Frontend Portfolio</title>
+  <meta name="title" content="Jair Hernández | Desarrollador de Software & Frontend Portfolio" />
+  <meta name="description" content="Portafolio profesional de Jair Hernández (CloverJH17). Desarrollador de software especializado en aplicaciones web modernas, interfaces intuitivas y soluciones eficientes." />
+  <meta name="author" content="Jair Hernández (CloverJH17)" />
+  <meta name="keywords" content="Jair Hernández, CloverJH17, Desarrollador Web, Frontend Developer, Software Engineer, JavaScript, TypeScript, React, HTML5, CSS3, Portafolio" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://CloverJH17.github.io/" />
+  <meta property="og:title" content="Jair Hernández | Desarrollador de Software & Frontend" />
+  <meta property="og:description" content="Portafolio profesional y proyectos destacados de Jair Hernández. Soluciones web modernas, rendimiento optimizado y arquitectura limpia." />
+  <meta property="og:image" content="https://CloverJH17.github.io/assets/images/og-preview.png" />
+
+  <!-- Twitter Cards -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://CloverJH17.github.io/" />
+  <meta property="twitter:title" content="Jair Hernández | Desarrollador de Software & Frontend" />
+  <meta property="twitter:description" content="Portafolio profesional y proyectos destacados de Jair Hernández. Soluciones web modernas, rendimiento optimizado y arquitectura limpia." />
+  <meta property="twitter:image" content="https://CloverJH17.github.io/assets/images/og-preview.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍀</text></svg>" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="card">
-    <h1>Jair Hernández</h1>
-    <p class="subtitle">Desarrollo, Tecnología & Proyectos</p>
-    <hr>
-    <p>Bienvenido a mi sitio web personal. Aquí encontrarás mis proyectos, trayectoria y formas de contacto.</p>
-    <ul>
-      <li><strong>GitHub:</strong> <a href="https://github.com/CloverJH17" target="_blank">@CloverJH17</a></li>
-    </ul>
+  <!-- Fondo con degradado y cuadrícula sutil -->
+  <div class="background-effects" aria-hidden="true">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="grid-overlay"></div>
   </div>
+
+  <!-- Header / Barra de Navegación -->
+  <header class="site-header" id="header">
+    <nav class="nav-container" aria-label="Navegación principal">
+      <a href="#hero" class="nav-brand" aria-label="Jair Hernández - Inicio">
+        <span class="brand-bracket">&lt;</span><span class="brand-name">CloverJH17</span><span class="brand-bracket"> /&gt;</span>
+      </a>
+
+      <!-- Menú de Enlaces en Desktop -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active">Inicio</a></li>
+        <li><a href="#about" class="nav-link">Sobre mí</a></li>
+        <li><a href="#skills" class="nav-link">Habilidades</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <!-- Controles de cabecera -->
+      <div class="nav-actions">
+        <!-- Selector de Tema (Oscuro / Claro) -->
+        <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Botón Menú Móvil -->
+        <button id="mobile-menu-btn" class="mobile-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="badge-status">
+            <span class="status-dot"></span>
+            <span>Disponible para nuevos proyectos & oportunidades</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hola, soy <span class="gradient-text">Jair Hernández</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            <span class="typing-prefix">Desarrollador de Software &amp; Frontend</span>
+          </p>
+
+          <p class="hero-description">
+            Especializado en construir experiencias web interactivas, accesibles, de alto rendimiento y código limpio. Transformo requerimientos complejos en interfaces fluidas e intuitivas.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explorar Proyectos</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              <span>Hablemos</span>
+            </a>
+
+            <a href="assets/docs/CV_Jair_Hernandez.pdf" download class="btn btn-outline" title="Descargar Currículum Vitae">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Descargar CV</span>
+            </a>
+          </div>
+
+          <!-- Enlaces Rápidos a Redes -->
+          <div class="hero-social-links">
+            <a href="https://github.com/CloverJH17" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Perfil de GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Perfil de LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="mailto:jairhernandez.dev@example.com" class="social-icon-btn" aria-label="Enviar Correo Electrónico">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Código / Presentación visual -->
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title">developer_profile.ts</div>
+            </div>
+            <pre class="code-content"><code><span class="token-keyword">const</span> <span class="token-variable">developer</span> = {
+  <span class="token-property">name</span>: <span class="token-string">'Jair Hernández'</span>,
+  <span class="token-property">alias</span>: <span class="token-string">'CloverJH17'</span>,
+  <span class="token-property">location</span>: <span class="token-string">'Remoto / Global'</span>,
+  <span class="token-property">passions</span>: [
+    <span class="token-string">'Frontend Engineering'</span>,
+    <span class="token-string">'UI/UX Architecture'</span>,
+    <span class="token-string">'Clean Code & Performance'</span>
+  ],
+  <span class="token-property">currentFocus</span>: <span class="token-string">'Building scalable modern web apps'</span>,
+  <span class="token-property">status</span>: <span class="token-string">'Ready to collaborate 🚀'</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Sobre mí Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Conóceme</span>
+          <h2 class="section-title">Sobre mí &amp; Filosofía de Trabajo</h2>
+          <p class="section-subtitle">Pasión por la tecnología, atención al detalle y enfoque centrado en el usuario.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-card">
+            <p class="paragraph">
+              Soy un desarrollador comprometido con crear soluciones digitales robustas y memorables. Mi enfoque combina una sólida base en principios de ingeniería de software con una gran sensibilidad por el diseño de interfaces de usuario modernas.
+            </p>
+            <p class="paragraph">
+              Me enfoco en escribir código modular, mantenible y escalable. Creo firmemente que un buen software no solo debe verse bien, sino también ser accesible para todos los usuarios, tener una velocidad de carga óptima y una arquitectura clara.
+            </p>
+            
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-icon">⚡</div>
+                <div>
+                  <h4>Rendimiento &amp; Optimización</h4>
+                  <p>Carga instantánea, animaciones a 60fps y buenas prácticas de Web Vitals.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">📱</div>
+                <div>
+                  <h4>Mobile-First &amp; Accesibilidad</h4>
+                  <p>Diseño adaptativo a cualquier resolución garantizando estándares WCAG.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">🧩</div>
+                <div>
+                  <h4>Arquitectura Modular</h4>
+                  <p>Componentes reutilizables, escalables y fáciles de mantener.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Métricas / Estadísticas rápidas -->
+          <div class="about-stats-container">
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Compromiso con la Calidad</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Clean</span>
+              <span class="stat-label">Arquitectura y Estándares</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">UI/UX</span>
+              <span class="stat-label">Enfoque centrado en el Usuario</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Modern</span>
+              <span class="stat-label">Stack Tecnológico Actual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Habilidades / Stack Section -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tecnologías</span>
+          <h2 class="section-title">Habilidades &amp; Stack Técnico</h2>
+          <p class="section-subtitle">Herramientas y lenguajes que utilizo para dar vida a ideas y proyectos.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Categoría: Frontend -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">🎨</div>
+              <h3>Frontend &amp; UI</h3>
+            </div>
+            <ul class="skills-pill-list">
+              <li class="skill-pill"><span class="pill-dot"></span>HTML5 Semántico</li>
+              <li class="skill-pill"><span class="pill-dot"></span>CSS3 / Flexbox / Grid</li>
+              <li class="skill-pill"><span class="pill-dot"></span>JavaScript (ES6+)</li>
+              <li class="skill-pill"><span class="pill-dot"></span>TypeScript</li>
+              <li class="skill-pill"><span class="pill-dot"></span>React / Next.js</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Tailwind CSS / SASS</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Responsive &amp; Mobile-First</li>
+            </ul>
+          </div>
+
+          <!-- Categoría: Backend & Datos -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">⚙️</div>
+              <h3>Backend &amp; Lógica</h3>
+            </div>
+            <ul class="skills-pill-list">
+              <li class="skill-pill"><span class="pill-dot"></span>Node.js / Express</li>
+              <li class="skill-pill"><span class="pill-dot"></span>APIs RESTful &amp; JSON</li>
+              <li class="skill-pill"><span class="pill-dot"></span>SQL (PostgreSQL / MySQL)</li>
+              <li class="skill-pill"><span class="pill-dot"></span>NoSQL (MongoDB / Firebase)</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Autenticación (JWT / OAuth)</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Python Básico / Scripting</li>
+            </ul>
+          </div>
+
+          <!-- Categoría: Herramientas & Flujo -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">🛠️</div>
+              <h3>Herramientas &amp; DevOps</h3>
+            </div>
+            <ul class="skills-pill-list">
+              <li class="skill-pill"><span class="pill-dot"></span>Git &amp; GitHub (CI/CD / Pages)</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Vite / Webpack / npm / pnpm</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Figma / Prototipado UI</li>
+              <li class="skill-pill"><span class="pill-dot"></span>VS Code &amp; Extensiones</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Postman / Test de APIs</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Terminal Bash / PowerShell</li>
+            </ul>
+          </div>
+
+          <!-- Categoría: Metodologías & Buenas Prácticas -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon">✨</div>
+              <h3>Buenas Prácticas</h3>
+            </div>
+            <ul class="skills-pill-list">
+              <li class="skill-pill"><span class="pill-dot"></span>Clean Code &amp; Refactorización</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Accesibilidad Web (a11y)</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Optimización de Rendimiento (LCP/SEO)</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Control de Versiones Semántico</li>
+              <li class="skill-pill"><span class="pill-dot"></span>Metodologías Ágiles / Scrum</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Proyectos Destacados Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portafolio</span>
+          <h2 class="section-title">Proyectos Destacados</h2>
+          <p class="section-subtitle">Una muestra de soluciones desarrolladas con enfoque en usabilidad, arquitectura limpia y valor real.</p>
+        </div>
+
+        <!-- Filtros de Proyectos -->
+        <div class="project-filters" role="tablist" aria-label="Filtro de proyectos">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+          <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+          <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">Full Stack</button>
+          <button class="filter-btn" data-filter="tools" role="tab" aria-selected="false">Herramientas</button>
+        </div>
+
+        <!-- Grid de Proyectos -->
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- Proyecto 1 -->
+          <article class="project-card" data-category="frontend">
+            <div class="project-preview">
+              <div class="project-badge">Destacado</div>
+              <div class="preview-placeholder">
+                <div class="placeholder-icon">💻</div>
+                <span>E-Commerce Dashboard UI</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Panel de Control &amp; Gestión Comercial</h3>
+              <p class="project-description">
+                Dashboard administrativo responsivo con visualización de métricas en tiempo real, filtros avanzados de catálogo y gestión de inventario con modo oscuro nativo.
+              </p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">CSS Grid</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Web Vitals</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/CloverJH17" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="Ver código en GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Código</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-primary" aria-label="Ver Demo en Vivo">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 2 -->
+          <article class="project-card" data-category="fullstack">
+            <div class="project-preview">
+              <div class="preview-placeholder">
+                <div class="placeholder-icon">🚀</div>
+                <span>Task &amp; Team Flow App</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Sistema de Gestión de Tareas Colaborativo</h3>
+              <p class="project-description">
+                Aplicación web interactiva tipo Kanban para gestión de proyectos en equipo con autenticación de usuarios, persistencia en base de datos y actualizaciones en tiempo real.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">REST API</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/CloverJH17" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="Ver código en GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Código</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-primary" aria-label="Ver Demo en Vivo">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="project-card" data-category="tools">
+            <div class="project-preview">
+              <div class="preview-placeholder">
+                <div class="placeholder-icon">⚡</div>
+                <span>Dev Productivity Toolkit</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Suite de Herramientas para Desarrolladores</h3>
+              <p class="project-description">
+                Colección de utilidades web ligeras para programadores: formateador de JSON, generador de paletas CSS, conversor de formatos y comprobador de contraste a11y.
+              </p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Web API</span>
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">GitHub Pages</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/CloverJH17" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="Ver código en GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Código</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-primary" aria-label="Ver Demo en Vivo">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contacto & Enlaces Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Conexión</span>
+          <h2 class="section-title">¿Tienes un proyecto en mente?</h2>
+          <p class="section-subtitle">Estoy disponible para nuevos proyectos, colaboraciones o propuestas laborales. ¡Contáctame y creemos algo increíble juntos!</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- Tarjeta de contacto directo -->
+          <div class="contact-card">
+            <div class="contact-method">
+              <div class="contact-icon">📫</div>
+              <div class="contact-details">
+                <span class="contact-label">Correo Electrónico</span>
+                <span class="contact-value" id="email-text">jairhernandez.dev@example.com</span>
+              </div>
+              <button class="btn btn-outline btn-sm copy-btn" id="copy-email-btn" title="Copiar correo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copy-btn-text">Copiar</span>
+              </button>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">🐙</div>
+              <div class="contact-details">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/CloverJH17</span>
+              </div>
+              <a href="https://github.com/CloverJH17" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <span>Visitar</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">💼</div>
+              <div class="contact-details">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/jair-hernandez</span>
+              </div>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <span>Conectar</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <div class="contact-direct-action">
+              <a href="mailto:jairhernandez.dev@example.com" class="btn btn-primary btn-block">
+                <span>Enviar mensaje por Correo</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-bracket">&lt;</span><span class="brand-name">CloverJH17</span><span class="brand-bracket"> /&gt;</span>
+        <p class="footer-tagline">Construyendo el futuro web con pasión y código limpio.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Inicio</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="current-year">2026</span> Jair Hernández (CloverJH17). Diseñado &amp; desarrollado con estándares web.</p>
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Volver al inicio" title="Volver al inicio">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>
